@@ -57,15 +57,25 @@ Laya.class(TestUI, "TestUI", TestPageUI);
 Laya.class(MainView, "MainView", MainViewUI);
 
 Laya.init(1136, 640);
-Laya.loader.load("res/atlas/comp.atlas", Handler.create(this, onAssetLoaded), null, Loader.ATLAS);
+//垂直居中对齐，另一种写法：Laya.stage.alignV = Stage.ALIGN_MIDDLE
+Laya.stage.alignV = "middle";
+//水平居中对齐，另一种写法：Laya.stage.alignH = Stage.ALIGN_CENTER;
+Laya.stage.alignH = "center";
 
+Laya.stage.scaleMode = "fixedwidth";
 
+//自动横屏，游戏的水平方向始终与浏览器屏幕较短边保持垂直
+Laya.stage.screenMode = "horizontal";
+
+Laya.stage.bgColor = "#FFFFFF"
+
+Laya.loader.load(["res/atlas/comp.atlas","res/atlas/comp/whac_a_mole/version1.atlas","res/atlas/comp/whac_a_mole/version1/star.atlas"], Handler.create(this, onAssetLoaded), null, Loader.ATLAS);
 function onAssetLoaded()
 {
 	// Laya.stage.addChild(new TestUI());
 	var mainView = new MainView()
+	Laya.mainView = mainView
 	Laya.stage.addChild(mainView);
-	mainView.createSampleText();
-	// MainView.createLabel()
-}
+  
 
+}

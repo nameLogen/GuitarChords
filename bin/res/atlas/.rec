@@ -1,5 +1,6 @@
 D .
 D comp
+R 72160319 .rec
 P D12221A9 bg.png
 P 9401CC40 blank.png
 P B03390E5 btn_close.png
@@ -33,3 +34,30 @@ P B9680947 vscroll$up.png
 P 7E990267 vscroll.png
 P E466EB1C vslider$bar.png
 P 2BFF7046 vslider.png
+D comp/whac_a_mole
+D comp/whac_a_mole/version1
+P 64C10F3A bg_canvas.png
+P 295F0445 bg_gameover.png
+P A5B1A58D bg_hole.png
+P 681CBDB9 bg_hole1.png
+P 15B774E1 bg_hole2.png
+P 9853A07A bg_hole3.png
+P 8AD24EC7 hammer.png
+P 7784AAD9 help.png
+P FC5F7322 icon.png
+P 87C617C0 mouse.png
+P 07698A5C set_board.png
+P 5D91C619 time_roller.png
+D comp/whac_a_mole/version1/star
+P CECFA05F f-0.png
+P A482117E f-1.png
+P 64D4D04F f-10.png
+P 7E9A51E2 f-11.png
+P 3264AFC8 f-2.png
+P 2698E509 f-3.png
+P C1855441 f-4.png
+P B98EE7D1 f-5.png
+P 75E8D0C5 f-6.png
+P 4B6F457E f-7.png
+P 7C164E33 f-8.png
+P D2F0C728 f-9.png
