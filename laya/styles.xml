@@ -1,0 +1,12 @@
+<res>
+   <item name="comp/whac_a_mole/version1/bg_canvas.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="comp/whac_a_mole/version1/bg_gameover.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="comp/whac_a_mole/version1/bg_hole.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="comp/whac_a_mole/version1/help.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="comp/whac_a_mole/version1/icon.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="comp/whac_a_mole/version1/mouse.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="comp/whac_a_mole/version1/set_board.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="comp/whac_a_mole/version1/bg_hole1.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="comp/whac_a_mole/version1/bg_hole2.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+   <item name="comp/whac_a_mole/version1/bg_hole3.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
+</res>
