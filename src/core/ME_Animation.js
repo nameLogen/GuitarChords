@@ -1,68 +1,94 @@
 /**
 * name 序列帧动画
 */
-function ME_Animation(url,frameFun,frameName,frameNum) {
+function ME_Animation(imageName,getFrameMethod,framesName) {
     ME_Animation.super(this)
-    this.url = url;
-    this.frameName = frameName;
-    this.frameNum = frameNum;
-    this.frameFun = frameFun;
-    this.rects = this.frameFun(this.frameName)
-       
-    var __proto = ME_Animation.prototype;
+    var __proto = ME_Animation.prototype
 
-    __proto.init = function init(){
-        this.state = "stop"
-        this.count = 0
-        this.textureArr = []
-        console.log(this.rects)
-        for (var j = 0; j < this.rects.length; j++) {
-            var rect = this.rects[j]
-            this.textureArr.push(createTexture(this.url,rect))
-        }
-        
-        Laya.timer.frameLoop(8,this,this.playAni);
-
+    /**
+     * 帧列表
+     * @format {
+     *     x: 0,
+     *     y: 0,
+     *     duration: 0,
+     *     collRect: [[left, top, width, height]]
+     * }
+     */
+    this.frames = [];
+    /**
+     * 循环播放
+     */
+    // this.loop = true;
+    /**
+     * 播放倍速
+     */
+    // this.speed = 1;
+    /**
+     * @read only
+     * 播放状态
+     */
+    // this.playing = false;
+    /**
+     * @read only
+     * 正在播放的帧索引(第一帧从0开始)
+     */
+    this.currentFrameIndex = 0;
+    /**
+     * @read only
+     * 正在播放的帧对象
+     */
+    this.currentFrame = null;
+    /**
+     * @private
+     * 当前帧已播放次数
+     */
+    this.currentPlayeTimes = 0; //在Animation内部自定义这样，是为了让对象自控制自己的帧变换，间接影响这个数值快慢就是刷新canvas速率的快慢
+    /**
+     * 多少次界面刷新更换一帧
+     */
+    this.maxPlayTimes = 4 ;    
+    this.frames = getFrameMethod(framesName);   
+    this.imageName = imageName
+    this.textureArr = []
+    for (var j = 0; j < this.frames.length; j++) {
+        var rect = this.frames[j];
+        this.textureArr.push(createTexture(this.imageName,rect))
     }
-
-    __proto.playAni = function playAni(){
-        if (this.state == "play") {
-            this.graphics.clear();
-            this.graphics.drawTexture(this.textureArr[this.count])//,
-            this.count++;
-            if(this.count>=this.frameNum - 1){
-                this.count = 0;
+    this.currentFrameIndex = 0;
+    this.currentFramePlayed = 0;
+    /**
+     * normal状态更新
+     */
+	 __proto.update = function(){
+        if(this.currentPlayeTimes>=this.maxPlayTimes){
+            if(this.currentFrameIndex >=  this.frames.length-2){ 
+                this.currentFrameIndex=0;
+            }else{			  
+                this.currentFrameIndex++;
             }
-        }else if(this.state == "dead"){
-            this.graphics.clear();
-            this.graphics.drawTexture(this.textureArr[this.frameNum - 1])//,
-            this.count++;
-            if(this.count>=this.frameNum){
-                this.count = 0;
-            }
+            var rect = this.frames[this.currentFrameIndex]
+            // rect.h = h
+            this.currentFrame = this.textureArr[this.currentFrameIndex]//createTexture(this.imageName,rect)
+            this.currentPlayeTimes=0;
+        }else{
+            this.currentPlayeTimes++;    
         }
     }
-    
-    __proto.play = function play(){
-        this.state = "play"
+	   
+    __proto.draw = function(){
+        this.graphics.clear();
+        this.graphics.drawTexture(this.currentFrame);
     }
 
-    __proto.stop = function stop(){
-        this.state = "stop"
-        Laya.timer.clear(this,this.playAni)
+    __proto.dead = function(){
+        this.currentFrame = this.textureArr[this.currentFrameIndex]//createTexture(this.imageName,rect)
+        this.draw()
     }
 
-    __proto.dead = function dead(){
-        this.state = "dead"
-        var ani = Mole.VertigoStar.createStarAnimition();
-        this.addChild(ani);  
-    }
-
-    __proto.destory = function destory(){
-        Laya.timer.clearAll(this);
+    __proto.stop = function(h){
         this.graphics.clear();
     }
-    this.init()
+
 }
 
 Laya.class(ME_Animation,'ME.ME_Animation',Laya.Sprite);
