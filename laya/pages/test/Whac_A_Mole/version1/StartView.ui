@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Dialog",
-    "selectedBox":1,
-    "selecteID":10,
+    "selectedBox":7,
+    "selecteID":13,
     "props":{"width":1136,"sceneColor":"#0000ff","height":640},
     "nodeParent":-1,
     "label":"Dialog",
@@ -28,20 +28,46 @@
         {
             "x":15,
             "type":"View",
-            "props":{"y":63,"x":220,"width":750,"var":"mouseView0","height":550},
+            "props":{"y":240,"x":220,"width":750,"var":"mouseView0","layoutEnabled":true,"height":100},
             "nodeParent":1,
             "label":"View(mouseView0)",
-            "isDirectory":false,
+            "isOpen":true,
+            "isDirectory":true,
             "isAniNode":true,
-            "hasChild":false,
+            "hasChild":true,
             "compId":7,
             "child":[
-                ]
+                {
+                    "x":30,
+                    "type":"View",
+                    "props":{"y":-181,"x":62,"width":750,"renderType":"mask","mouseEnabled":true,"height":287},
+                    "nodeParent":7,
+                    "label":"View",
+                    "isOpen":true,
+                    "isDirectory":true,
+                    "isAniNode":true,
+                    "hasChild":true,
+                    "compId":13,
+                    "child":[
+                        {
+                            "x":45,
+                            "type":"Rect",
+                            "props":{"y":0,"x":0,"width":649,"lineWidth":1,"height":286,"fillColor":"#ff0000"},
+                            "nodeParent":13,
+                            "label":"Rect",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":14,
+                            "child":[
+                                ]
+                        }]
+                }]
         },
         {
             "x":15,
             "type":"Image",
-            "props":{"y":274,"x":220,"var":"hole1","skin":"comp/whac_a_mole/version1/bg_hole1.png"},
+            "props":{"y":274,"x":221,"var":"hole1","skin":"comp/whac_a_mole/version1/bg_hole1.png"},
             "nodeParent":1,
             "label":"Image(hole1)",
             "isDirectory":false,
@@ -54,15 +80,41 @@
         {
             "x":15,
             "type":"View",
-            "props":{"y":73,"x":230,"width":750,"var":"mouseView1","height":550},
+            "props":{"y":333,"x":230,"width":750,"var":"mouseView1","height":98},
             "nodeParent":1,
             "label":"View(mouseView1)",
-            "isDirectory":false,
+            "isOpen":true,
+            "isDirectory":true,
             "isAniNode":true,
-            "hasChild":false,
+            "hasChild":true,
             "compId":11,
             "child":[
-                ]
+                {
+                    "x":30,
+                    "type":"View",
+                    "props":{"y":-190,"x":42,"width":750,"renderType":"mask","height":285},
+                    "nodeParent":11,
+                    "label":"View",
+                    "isOpen":true,
+                    "isDirectory":true,
+                    "isAniNode":true,
+                    "hasChild":true,
+                    "compId":15,
+                    "child":[
+                        {
+                            "x":45,
+                            "type":"Rect",
+                            "props":{"y":0,"x":0,"width":649,"lineWidth":1,"height":286,"fillColor":"#ff0000"},
+                            "nodeParent":15,
+                            "label":"Rect",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":16,
+                            "child":[
+                                ]
+                        }]
+                }]
         },
         {
             "x":15,
@@ -80,15 +132,41 @@
         {
             "x":15,
             "type":"View",
-            "props":{"y":83,"x":240,"width":750,"var":"mouseView2","height":550},
+            "props":{"y":432,"x":240,"width":750,"var":"mouseView2","height":100},
             "nodeParent":1,
             "label":"View(mouseView2)",
-            "isDirectory":false,
+            "isOpen":true,
+            "isDirectory":true,
             "isAniNode":true,
-            "hasChild":false,
+            "hasChild":true,
             "compId":12,
             "child":[
-                ]
+                {
+                    "x":30,
+                    "type":"View",
+                    "props":{"y":-187,"x":24,"width":750,"renderType":"mask","height":287},
+                    "nodeParent":12,
+                    "label":"View",
+                    "isOpen":true,
+                    "isDirectory":true,
+                    "isAniNode":true,
+                    "hasChild":true,
+                    "compId":17,
+                    "child":[
+                        {
+                            "x":45,
+                            "type":"Rect",
+                            "props":{"y":0,"x":0,"width":649,"lineWidth":1,"height":286,"fillColor":"#ff0000"},
+                            "nodeParent":17,
+                            "label":"Rect",
+                            "isDirectory":false,
+                            "isAniNode":true,
+                            "hasChild":false,
+                            "compId":18,
+                            "child":[
+                                ]
+                        }]
+                }]
         },
         {
             "x":15,
