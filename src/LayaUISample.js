@@ -77,5 +77,7 @@ function onAssetLoaded()
 	Laya.mainView = mainView
 	Laya.stage.addChild(mainView);
   
-
+	var dd = new LT.LigatureMain();
+	dd.gameStart()
+	// Laya.stage.addChild(dd);
 }
